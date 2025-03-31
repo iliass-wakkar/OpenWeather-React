@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@theme {
+    --font-sour-gummy: 'Sour Gummy', 'sans-serif'
+    
+}
+@layer utilities {
+    .scrollbar-custom {
+        scrollbar-width: thin;
+        scrollbar-color: #878dee transparent;
+    }
+
+    .scrollbar-custom::-webkit-scrollbar {
+        @apply h-2;
+    }
+
+    .scrollbar-custom::-webkit-scrollbar-track {
+        @apply bg-transparent;
+    }
+
+    .scrollbar-custom::-webkit-scrollbar-thumb {
+        @apply bg-[#878dee] rounded-full;
+    }
+}
