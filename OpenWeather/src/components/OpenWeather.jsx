@@ -5,6 +5,7 @@ import WeatherInfo from "./weathaerInfo/WeatherInfo";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import moment from "moment/min/moment-with-locales";
+import LoadingCircleSpinner from "./loading motion/LoadingCircleSpinner";
 
 // Weather code to text mapping (WMO codes)
 const WEATHER_CODE_MAP = {
@@ -109,15 +110,15 @@ export default function OpenWeather() {
   const { t, i18n } = useTranslation();
   const [language,setLanguage] = useState('ar')
   const [weatherData, setWeatherData] = useState({
-    temperature: 14.1,
-    weatherCondition: "Partly Cloudy",
-    precipitation: 0,
-    humidity: 78,
-    windSpeed: 4.0,
+    temperature: null,
+    weatherCondition: null,
+    precipitation: null,
+    humidity: null,
+    windSpeed: null,
     units: {
-      temp: "°C",
-      speed: "km/h",
-      precip: "mm",
+      temp: null,
+      speed: null,
+      precip: null,
     },
   });
   const [location, setLocation] = useState({
@@ -273,8 +274,10 @@ export default function OpenWeather() {
           <WeatherInfo translator={t} weatherData={weatherData} />
         </div>
         <section className="flex flex-col justify-center items-center h-fit w-full">
-          <div className="w-full p-2">
-            <span className="font-bold px-5 underline text-xl">Today</span>
+          <div className={`w-full p-2 ${language === "ar" && "text-right"}`}>
+            <span className={`font-bold px-5 underline text-xl `}>
+              {t("Today")}
+            </span>
           </div>
           <section className="w-full h-fit px-3 overflow-x-auto overflow-y-hidden py-2 scrollbar-custom">
             {/* Container */}
