@@ -71,7 +71,7 @@ const WEATHER_IMAGE_MAP = {
 };
 
 // In your WeatherInfo component
-export default function WeatherInfo({ weatherData }) {
+export default function WeatherInfo({ weatherData, translator }) {
   // Get day/night status from weather data
   const isDay = weatherData?.isDay; // Make sure you're passing this from your API processing
   console.log(weatherData);
@@ -83,7 +83,7 @@ export default function WeatherInfo({ weatherData }) {
   };
 
   return (
-    <section className="flex flex-col items-center w-[50%] justify-center gap-6">
+    <section className="flex flex-col items-center w-[50%] justify-center gap-6 lg:gap-20">
       <div className="relative flex flex-col items-center w-fit mt-5">
         <img
           className="h-[165px] w-[165px]"
@@ -94,24 +94,28 @@ export default function WeatherInfo({ weatherData }) {
           {weatherData.temperature}°
         </span>
         <span className="text-2xl bottom-2 mt-10 -left-12">
-          {weatherData.weatherCondition}
+          {translator(weatherData.weatherCondition)}
         </span>
       </div>
       <div className="flex items-center gap-10 justify-center text-white bg-[#565eef] rounded-2xl w-[350px] h-[90px] mb-4">
         <div className="flex flex-col items-center justify-center gap-0.5 font-bold ">
           <FaUmbrella className="text-xl" />
-          <span className="text-xl">{weatherData.precipitation+' '}mm</span>
-          <span className="text-sm font-normal">Precipitation</span>
+          <span className="text-xl">{weatherData.precipitation + " "}mm</span>
+          <span className="text-sm font-normal">
+            {translator("Precipitation")}
+          </span>
         </div>
         <div className="flex flex-col items-center justify-center gap-0.5 font-bold ">
           <IoWater className="text-xl" />
           <span className="text-xl">{weatherData.humidity}%</span>
-          <span className="text-sm font-normal">Humidity</span>
+          <span className="text-sm font-normal">{translator("Humidity")}</span>
         </div>
         <div className="flex flex-col items-center justify-center gap-0.5 font-bold ">
           <FaWind className="text-xl" />
           <span className="text-lg">{weatherData.windSpeed} km/h</span>
-          <span className="text-sm font-normal">Wind speed</span>
+          <span className="text-sm font-normal">
+            {translator("Wind speed")}
+          </span>
         </div>
       </div>
     </section>
