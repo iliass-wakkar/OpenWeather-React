@@ -42,6 +42,10 @@ const WEATHER_IMAGE_MAP = {
     day: "rain.png",
     night: "rain 0.png",
   },
+  "Slight rain showers": {
+    day: "rain.png",
+    night: "rain 0.png",
+  },
   "Slight rain": {
     day: "rain.png",
     night: "rain 0.png",

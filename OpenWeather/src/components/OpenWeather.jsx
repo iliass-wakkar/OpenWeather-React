@@ -68,24 +68,28 @@ const WEATHER_IMAGE_MAP = {
     night: "Lrain 0.png",
   },
   "Moderate drizzle": {
-    day: "Lrain.png",
-    night: "Lrain 0.png",
+    day: "rain.png",
+    night: "rain 0.png",
   },
   "Dense drizzle": {
-    day: "Lrain.png",
-    night: "Lrain 0.png",
+    day: "rain.png",
+    night: "rain 0.png",
+  },
+  "Slight rain showers": {
+    day: "rain.png",
+    night: "rain 0.png",
   },
   "Slight rain": {
     day: "rain.png",
     night: "rain 0.png",
   },
   "Moderate rain": {
-    day: "hail.png",
-    night: "hail 0.png",
+    day: "rain.png",
+    night: "rain 0.png",
   },
   "Heavy rain": {
-    day: "hail.png",
-    night: "hail 0.png",
+    day: "rain.png",
+    night: "rain 0.png",
   },
   "Slight snow": {
     day: "Lsnow.png",
